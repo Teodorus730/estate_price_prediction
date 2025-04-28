@@ -1,0 +1,33 @@
+{% from "_renderfield.html" import renderfield %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="static/css/main.css" rel="stylesheet" type="text/css">
+    <title>Price</title>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Оценка квартиры</h1>
+    </div>
+    <div class="form-container">
+        <form action="/" method="post" novalidate>
+            {{ form.csrf_token }}
+            {{ renderfield(form.min_to_metro) }}
+            {{ renderfield(form.region_of_moscow) }}
+            {{ renderfield(form.total_area) }}
+            {{ renderfield(form.living_area) }}
+            {{ renderfield(form.floor) }}
+            {{ renderfield(form.number_of_floors) }}
+            {{ renderfield(form.construction_year) }}
+            {{ renderfield(form.is_new) }}
+            {{ renderfield(form.is_apartments) }}
+            {{ renderfield(form.ceiling_height) }}
+            {{ renderfield(form.number_of_rooms) }}
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
