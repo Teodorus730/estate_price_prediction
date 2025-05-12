@@ -16,5 +16,10 @@ def load_config(path: str = '.env'):
     return Config(
         WTF_CSRF_ENABLED=env.bool("WTF_CSRF_ENABLED"),
         WTF_CSRF_SECRET_KEY=env.str("WTF_CSRF_SECRET_KEY"),
-        SECRET_KEY=env.str("SECRET_KEY")
+        SECRET_KEY=env.str("SECRET_KEY"),
         )
+    
+def load_port(path: str = '.env'):
+    env = Env()
+    env.read_env(path)
+    return env.str("PORT")
