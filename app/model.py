@@ -12,4 +12,4 @@ class Model():
             self.model = pickle.load(f)
 
     def predict(self, sample):
-        return from_log(self.model.predict(sample))
+        return from_log(self.model.predict(sample))[0]
