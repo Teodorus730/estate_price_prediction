@@ -17,8 +17,7 @@
 
 1. Клонировать репозиторий:
    ```bash
-   git clone https://github.com/yourusername/flat-price-predictor.git
-   cd flat-price-predictor
+   git clone https://github.com/Teodorus730/estate_price_prediction.git
    ```
 
 2. Создать и активировать виртуальное окружение:
