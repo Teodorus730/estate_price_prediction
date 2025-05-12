@@ -5,6 +5,7 @@ from flask import render_template
 from app.forms import DataForm
 
 from app.utils import DataRowModel, to_row
+from app.messages import prediction_readable
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
@@ -13,6 +14,6 @@ def index():
     if form.validate_on_submit():
         row = to_row(form.data)
         data_row = DataRowModel(row).prep()
-        price = int(model.predict(data_row)[0])
-        return render_template('output.html', price=price)
-    return render_template('index.html', form=form)
+        price = prediction_readable(model.predict(data_row))
+        return render_template('index.html', form=form, price=price)
+    return render_template('index.html', form=form, price=0)

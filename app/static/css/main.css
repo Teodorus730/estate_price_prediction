@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #007BFF;
     margin: 0;
     padding: 0;
     display: flex;
@@ -23,6 +23,12 @@ body {
 h1 {
     margin: 0;
     font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    /* margin: 0; */
+    font-size: 20px;
     color: #333;
 }
 
