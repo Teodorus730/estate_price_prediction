@@ -4,8 +4,8 @@ normal_values = {
     "min_to_metro": [1, 30],
     "total_area": [20, 250],
     "living_area": [1, 150],
-    "ceiling_height": [2.3, 4],
-    "construction_year": [1950, 2030],
+    "ceiling_height": [2.3, 5],
+    "construction_year": [1940, 2030],
     "price": [8*10**6, 2.5*10**8]
 }
 

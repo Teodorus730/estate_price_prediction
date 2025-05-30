@@ -26,16 +26,14 @@ class DataRowModel():
         self.new_row['floor_ratio'] = self.new_row['floor'] / (self.new_row['number_of_floors'])
         self.new_row['age'] = np.maximum(2025 - self.new_row['construction_year'], 0)
         self.new_row['area_per_room'] = self.new_row['total_area'] / (self.new_row['number_of_rooms'])
-        self.new_row['height_age_ratio'] = self.new_row['ceiling_height'] / (self.new_row['age'] + 1)
         self.new_row['density'] = self.new_row['living_area'] / self.new_row['total_area']
-        self.new_row['metro_distance_inv'] = 1 / (self.new_row['min_to_metro'])
         self.new_row['is_new_area'] = self.new_row["living_area"] * self.new_row["is_new"]
         self.new_row['is_apartments_area'] = self.new_row["living_area"] * self.new_row["is_apartments"]
-            
+                    
     def encoding(self):
         for col in self.data:
             self.new_row[f"{col}_encoded"] = self.data[col][str(self.new_row[col])]
-        
+                    
     
     def prep(self):
         self.import_data()
@@ -44,17 +42,18 @@ class DataRowModel():
 
         
         needed = [
+            'min_to_metro',
             'total_area',
+            'floor',
             'number_of_floors',
             'ceiling_height',
             'floor_ratio',
             'age',
             'area_per_room',
             'density',
-            'metro_distance_inv',
             'is_new_area',
             'is_apartments_area',
-            'region_of_moscow_encoded'
+            'region_of_moscow_encoded',
         ]
         needed_dict = {}
         for col in needed:
@@ -62,4 +61,5 @@ class DataRowModel():
             
         df = pd.DataFrame(needed_dict)
         return df
+    
     

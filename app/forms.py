@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, FloatField, RadioField, DecimalField, SelectField
+from wtforms import IntegerField, SubmitField, RadioField, DecimalField, SelectField
 from wtforms.validators import NumberRange, AnyOf, InputRequired
 from app.messages import *
 
@@ -35,3 +35,5 @@ class DataForm(FlaskForm):
                                                         NumberRange(min=normal_values["ceiling_height"][0], max=normal_values["ceiling_height"][1], message=normal_values_messages["ceiling_height"])])
     
     number_of_rooms = RadioField(name=names["number_of_rooms"], choices=rooms_choices.items(), validators=[InputRequired(message=field_is_required_message)])
+
+    submit = SubmitField("Рассчитать")
